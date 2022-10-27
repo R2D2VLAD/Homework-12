@@ -1,6 +1,5 @@
 package lesson12;
 
-import java.time.Instant;
 import java.time.LocalDate;
 
 public class lesson12 {
@@ -29,17 +28,16 @@ public class lesson12 {
     }
 
     public static void calculateDeliveryDays(int deliveryDistance, int deliveryDays) {
-       if (deliveryDistance > 20) {
-           deliveryDays++;
-       }
-           if (deliveryDistance > 60 && deliveryDistance <= 100) {
-               deliveryDays++;
-
-       } else {
-               System.out.println("Невожможно расчитать срок доставки!");
-           }
+        if (deliveryDistance >= 20) {
+            deliveryDays++;
+        }
+        if (deliveryDistance >= 60 && deliveryDistance <= 100) {
+            deliveryDays++;
+        } else if (deliveryDistance > 100) {
+            System.out.println("Невозможно расчитать срок доставки!");
+        }
         System.out.println("Потребуется дней: " + deliveryDays);
-    }
+}
 
     public static void main(String[] args) {
         //Домашняя работа
@@ -57,8 +55,9 @@ public class lesson12 {
 
         //Задание 3
         System.out.println("Задание 3");
-        int deliveryDistance = 95;
         int deliveryDays = 1;
+        int deliveryDistance = 10;
         calculateDeliveryDays(deliveryDistance, deliveryDays);
-        }
+
+    }
     }
